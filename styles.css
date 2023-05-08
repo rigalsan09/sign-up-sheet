@@ -1,3 +1,9 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: Norse-Bold;
   src: url(fonts/Norse-Bold.otf);
@@ -14,41 +20,38 @@ body {
 
 .main {
   display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 100vh;
+  flex-direction: column;
+  background-color: rgb(74, 73, 73);
 }
 
 .left {
+  display: flex;
+  flex-direction: column;
   background-image: url(images/halie-west-25xggax4bSA-unsplash.jpg);
-  width: 40vw;
   background-size: cover;
-  color: white;
   font-family: Norse-Bold, sans-serif;
+  width: 100vw;
+  height: 40vh;
+  justify-content: end;
 }
 
 .right {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   font-family: sans-serif;
+  background-color: rgb(235, 235, 235);
+  width: 100vw;
+  height: 100vh;
 }
 
 .container1 {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20vh;
-  height: 80vh;
-  width: 40vw;
-  justify-content: space-between;
+  background-color: rgb(0, 0, 0, 0.4);
 }
 
 #banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0, 0, 0, 0.4);
-  height: 150px;
 }
 
 .logoImage {
@@ -56,62 +59,179 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 15vh;
-  width: 8vw;
+  width: 15vw;
+  height: 12vh;
 }
 
 #title {
-  font-size: 6rem;
+  font-size: 3.5rem;
   color: white;
 }
 
 .credit {
-  color: white;
-  text-align: center;
+  text-align: right;
   font-family: sans-serif;
+  font-size: 0.5rem;
+  color: rgba(255, 255, 255, 0.567);
+  padding-right: 32px;
 }
 
 .container2 {
   display: flex;
-  flex-direction: column;
-  margin-left: 5vw;
-  margin-right: 5vw;
+  justify-content: center;
 }
 
-form {
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-bottom: 3vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-#first_name {
-  display: flex;
-  flex-direction: column;
-}
-
-#last_name {
-  display: flex;
-  flex-direction: column;
-}
-
-#user_email {
-  display: flex;
-  flex-direction: column;
-}
-#phone_number {
-  display: flex;
-  flex-direction: column;
+.titleContent {
+  max-width: 326px;
+  margin: 32px;
 }
 
 .container3 {
-  padding-left: 5vw;
-  padding-right: 5vw;
-  padding-top: 4vh;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+form {
+  max-width: 326px;
+  margin: 32px;
+}
+
+.inputContainer {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #e5e7eb;
+  outline: 0;
+  border-radius: 4px;
+}
+
+:focus {
+  border: 2px solid blue;
+}
+
+/* input:invalid:required {
+  border: 2px solid red;
+} */
+
+input:valid:required {
+  border: 2px dashed green;
+}
+
+.container4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 48px;
+}
+
+button {
+  color: white;
+  background-color: #596d48;
+  padding: 12px 32px 12px 32px;
+  border-radius: 4px;
+  font-size: 1rem;
+  border: none;
+  width: 326px;
+}
+
+/* -------- */
+
+@media screen and (min-width: 768px) {
+  .main {
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .left {
+    height: 100vh;
+    width: 40vw;
+  }
+
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 25vh;
+  }
+
+  #banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.4);
+    height: 150px;
+  }
+
+  .logoImage {
+    background-image: url(images/odin-lined.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10vh;
+    width: 9vw;
+  }
+
+  #title {
+    font-size: 6rem;
+    color: white;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 60vw;
+    justify-content: center;
+  }
+
+  .titleContent {
+    margin-left: 54px;
+    font-size: 1.5rem;
+    max-width: 780px;
+  }
+
+  .container2,
+  .container3,
+  .container4 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 780px;
+    margin-left: 54px;
+  }
+
+  .row {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .inputContainer {
+    flex: 1;
+  }
+
+  button {
+    margin-left: 54px;
+    padding: 16px 64px;
+    width: fit-content;
+  }
+  p {
+    margin-left: 54px;
+  }
 }
